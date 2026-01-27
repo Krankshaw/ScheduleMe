@@ -1287,7 +1287,7 @@ function initTooltips() {
 
             // Current UTF-8 safe format
             if (rawStream.startsWith('SCHME:')) {  // Conditional guard/check before executing the next block
-                const base64 = rawStream.substring(9);  // Define constant: base64
+                const base64 = rawStream.substring(6);  // Define constant: base64
                 const binary = atob(base64);  // Define constant: binary
                 const bytes = new Uint8Array(binary.length);  // Define constant: bytes
                 for (let i = 0; i < binary.length; i++) {  // Loop over a range/collection to process items
@@ -1306,7 +1306,7 @@ function initTooltips() {
 
             // Legacy format (kept for backwards compatibility)
             if (rawStream.startsWith('Legacy:')) {  // Conditional guard/check before executing the next block
-                const rawBuffer = atob(rawStream.substring(8));  // Define constant: raw buffer
+                const rawBuffer = atob(rawStream.substring(7));  // Define constant: raw buffer
                 let resultString = '';  // Define state variable: result string
                 for (let i = 0; i < rawBuffer.length; i++) {  // Loop over a range/collection to process items
                     resultString += String.fromCharCode(  
